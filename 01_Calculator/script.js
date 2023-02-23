@@ -128,6 +128,9 @@ class Calculator {
 
     // round result to 2 decimal places
     this.state.result = this.state.result.toFixed(2);
+    // if result is an integer, remove decimal places
+    if (this.state.result % 1 === 0)
+      this.state.result = parseInt(this.state.result);
     // update display
     this.updateDisplay(this.state.result);
     this.state.historyString +=
